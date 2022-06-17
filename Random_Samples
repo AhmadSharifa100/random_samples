@@ -1,0 +1,14 @@
+fo=4
+fs=100
+ts=1/fs
+t=0:ts:1-ts
+n=length(t)
+y=2*sin(2*pi*fo*t)
+plot(t,y)
+numberOfSamplesToTake = 20;
+sampleIndexes = randperm(numel(y), numberOfSamplesToTake)
+% Plot the samples;
+ts = t(sampleIndexes)
+ys = y(sampleIndexes)
+hold on;
+plot(ts, ys, 'r*');
